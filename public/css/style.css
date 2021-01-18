@@ -96,3 +96,17 @@ form{
 
 
 }
+
+#success-contaier{
+background-image: linear-gradient(#0c1901,#0095ffe8)!important;
+position: relative;
+}
+
+.inner-container {
+  width: 50%;
+  left: 30%;
+  top:20%;
+  color:white;
+  position: absolute;
+
+}
