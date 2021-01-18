@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const https = require("https");
 const request = require("request");
+let source  = require(__dirname + "/.gitignore/api.js");
 const app = express();
 
 
@@ -32,11 +33,13 @@ const data = {
   ]
 };
 
+
 var jsonData = JSON.stringify(data);
 const url = "https://us7.api.mailchimp.com/3.0/lists/37240a95d7";
 const options = {
   method: "POST",
-  auth: "nouman:66f7aaaf3b828afd178e99e17f3548be-us7"
+ // auth: '"'+source+'"'
+  auth: "nouman:"+source+"-us7"
 };
 const request = https.request(url, options, function(response){
   if (response.statusCode ===200){
@@ -69,7 +72,7 @@ app.listen(process.env.PORT || 3000,function(){
 
 
 
-
+console.log(source);
 
 
 
